@@ -2,14 +2,12 @@ name: Keep Alive
 
 on:
   schedule:
-    - cron: '*/5 * * * *' # 每5分钟运行一次
-  workflow_dispatch: # 允许手动运行
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
 
 jobs:
   ping:
     runs-on: ubuntu-latest
     steps:
-      - name: Ping HF Space
-        run: |
-          # 记得把下面这行换成你自己的 Space 地址
-          curl -I https://qqq.epri.eu.org
+      - name: Ping URL
+        run: curl -I https://qqq.epri.eu.org
